@@ -41,8 +41,9 @@ jobs:
           persist-credentials: false
       - name: Stage only the public files
         run: |
-          mkdir -p _site/.well-known
-          cp index.html 404.html robots.txt .nojekyll _site/
+          mkdir -p _site/.well-known _site/icons
+          cp index.html 404.html robots.txt .nojekyll manifest.webmanifest sw.js _site/
+          cp icons/*.png _site/icons/
           cp .well-known/security.txt _site/.well-known/
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v4

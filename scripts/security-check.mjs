@@ -68,7 +68,16 @@ check((html.match(/jose496@ybl/g) || []).length >= upis.length + 1, 'UPI ID also
 check(js.includes('window.top!==window.self'), 'frame guard present');
 check(js.includes('/* sec: sanitize save */') && js.includes('function cleanName('), 'saved-data sanitiser present');
 
-// 8. script parses
+// 8. installable app files
+let swSrc = ''; try { swSrc = readFileSync('sw.js', 'utf8'); } catch {}
+check(!!swSrc, 'service worker sw.js present');
+check(!/importScripts|eval\s*\(|new\s+Function/.test(swSrc), 'service worker loads no outside code');
+check(/https?:\/\//.test(swSrc) === false || [...swSrc.matchAll(/https?:\/\/([a-z0-9.-]+)/gi)].every(m => ALLOWED_HOSTS.has(m[1])), 'service worker contacts only allowed hosts');
+let man = {}; try { man = JSON.parse(readFileSync('manifest.webmanifest', 'utf8')); } catch {}
+check(man.name === 'Anatomy Run' && man.start_url === './' && (man.icons || []).some(i => i.purpose === 'maskable'), 'web app manifest valid (name, start_url, maskable icon)');
+check(csp.includes("worker-src 'self'"), "CSP allows only same-origin service worker");
+
+// 9. script parses
 try { const d = mkdtempSync(join(tmpdir(), 'ar-')); writeFileSync(join(d, 'c.js'), js);
   execFileSync(process.execPath, ['--check', join(d, 'c.js')]); ok.push('script parses (node --check)'); }
 catch (e) { fail.push('script parses (node --check)'); }

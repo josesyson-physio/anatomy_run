@@ -9,6 +9,7 @@ Made by **MotionPlus Physio** as an **Inclusive.Si** project.
 
 - Clinical review: MSK by Dr. Pavithran and Dr. Venkatesh; Neuro by Dr. Sudharson and Dr. Jeeva
 - Plays on phones (landscape) and desktop browsers
+- **Installable app (PWA):** add to home screen, opens full screen in landscape, plays offline
 - No sign-up, no ads, no tracking. Progress is stored only in the player's own browser
 
 ## Play
@@ -21,6 +22,7 @@ Once GitHub Pages is on, the demo is at:
 | Path | Purpose |
 |---|---|
 | `index.html` | The whole game: one self-contained file, no build step, no dependencies |
+| `manifest.webmanifest`, `sw.js`, `icons/` | Makes the game installable and playable offline |
 | `404.html` | Sends unknown paths back to the game |
 | `scripts/security-check.mjs` | Security gate run in CI before every deploy |
 | `.github/workflows/pages.yml` | Checks, then deploys only the public files to GitHub Pages |
@@ -28,6 +30,12 @@ Once GitHub Pages is on, the demo is at:
 | `docs/SECURITY-AUDIT.md` | The pre-launch security review and its results |
 | `_headers` | Extra HTTP security headers, used only if you move to Netlify or Cloudflare Pages |
 | `SECURITY.md`, `.well-known/security.txt` | How to report a vulnerability |
+
+## Installing on a phone
+
+- **Android (Chrome, Samsung Internet, Edge):** tap *Install* on the in-game prompt, or browser menu > *Install app*.
+- **iPhone/iPad (Safari):** Share > *Add to Home Screen*. The game shows these steps itself.
+- **Instagram's in-app browser** cannot install apps; the game tells players to open it in Chrome/Safari first.
 
 ## Turning on the demo site
 

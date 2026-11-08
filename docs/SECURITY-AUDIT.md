@@ -65,8 +65,15 @@ low items were fixed before launch; what remains is listed under *Residual risks
 - **Instagram in-app browser.** Works, but storage there can be cleared by the app. The in-game tip already
   suggests opening in Chrome/Safari.
 
+## Installable app (added after launch)
+
+- Service worker is same-origin only (`worker-src 'self'`), loads no outside code, and caches only the game, its icons and Google Fonts.
+- Pages are fetched network-first, so players get fixes as soon as they are online; the cache name changes with every build.
+- No push notifications, background sync or extra permissions are requested.
+- CI checks the manifest and service worker on every push (37 checks).
+
 ## How to re-run
 
 ```sh
-node scripts/security-check.mjs           # 32 automated checks
+node scripts/security-check.mjs           # 37 automated checks
 ```
