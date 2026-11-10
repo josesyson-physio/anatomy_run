@@ -1,5 +1,5 @@
 /* Anatomy Run service worker: offline play. Version changes whenever index.html changes. */
-const VERSION = 'ar-d8d14368d4';
+const VERSION = 'ar-cfb7709b12';
 const CORE = ['./', './index.html', './manifest.webmanifest', './404.html',
   './icons/icon-192.png', './icons/icon-512.png', './icons/maskable-512.png', './icons/apple-touch-icon.png', './icons/favicon-32.png'];
 const FONT_HOSTS = ['fonts.googleapis.com', 'fonts.gstatic.com'];

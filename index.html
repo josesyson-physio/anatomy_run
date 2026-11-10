@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-UW/OfnW4bWR1fLawU/MxS513iO+1NQjMqFJkXcUnoZg='; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: blob:; media-src 'self' data: blob:; connect-src 'none'; manifest-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'; worker-src 'self'; upgrade-insecure-requests">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-gNUz/o+uppAyDwexx7k40gwF7CG9cAmsa10C/zSjewc='; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: blob:; media-src 'self' data: blob:; connect-src 'none'; manifest-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'; worker-src 'self'; upgrade-insecure-requests">
 <meta name="referrer" content="no-referrer">
 <meta name="description" content="Anatomy Run: a free physiotherapy anatomy platformer. Run, collect clinical clues, make the diagnosis. By MotionPlus Physio and Inclusive.Si.">
 <meta name="theme-color" content="#173F31">
@@ -421,6 +421,7 @@ h2,h3,.banner,.plaque{font-optical-sizing:auto;letter-spacing:-.005em}
 .pill.gold{background-image:linear-gradient(100deg,transparent 0 40%,rgba(255,255,255,.75) 50%,transparent 60% 100%);background-size:260% 100%;animation:sheen 3.6s ease-in-out infinite}@keyframes sheen{0%,55%{background-position:120% 0}100%{background-position:-60% 0}}
 body.lowfx h1.kin span,body.lowfx .banner,body.lowfx .pill.gold{animation:none!important}
 @media (prefers-reduced-motion:reduce){h1.kin span,.banner,.pill.gold{animation:none!important}}
+.tb-btn{display:inline-grid;place-items:center;padding:0;line-height:0}.tb-btn .ico{display:block;margin:0}.quiet .ico{vertical-align:-.18em}
 
 /* comfort: stop pull-to-refresh, rubber-banding, blue tap flashes, text-select popups and double-tap zoom */
 html,body{overscroll-behavior:none;-webkit-tap-highlight-color:transparent;-webkit-text-size-adjust:100%;text-size-adjust:100%}
@@ -464,7 +465,7 @@ button,a,.opt,[role=button]{touch-action:manipulation}
   <symbol id="i-gem" viewBox="0 0 24 24"><path d="M12 2.5 21 9 12 22 3 9z" fill="currentColor"/><path d="M12 2.5 15.5 9h-7z" fill="#fff" opacity=".55"/><path d="M3 9h18L12 22z" fill="#000" opacity=".12"/></symbol>
   <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="10.5" width="14" height="10" rx="2.5" fill="currentColor"/><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5" fill="none" stroke="currentColor" stroke-width="2.4"/></symbol>
   <symbol id="i-pause" viewBox="0 0 24 24"><rect x="6" y="5" width="4" height="14" rx="1.5" fill="currentColor"/><rect x="14" y="5" width="4" height="14" rx="1.5" fill="currentColor"/></symbol>
-  <symbol id="i-gear" viewBox="0 0 24 24"><path d="M12 8.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7zm8.4 4.6-1.9.4a6.9 6.9 0 0 1-.7 1.7l1.1 1.6-1.6 1.6-1.6-1.1a6.9 6.9 0 0 1-1.7.7l-.4 1.9h-2.2l-.4-1.9a6.9 6.9 0 0 1-1.7-.7l-1.6 1.1-1.6-1.6 1.1-1.6a6.9 6.9 0 0 1-.7-1.7l-1.9-.4v-2.2l1.9-.4c.2-.6.4-1.2.7-1.7L4.1 6.6l1.6-1.6 1.6 1.1c.5-.3 1.1-.5 1.7-.7l.4-1.9h2.2l.4 1.9c.6.2 1.2.4 1.7.7l1.6-1.1 1.6 1.6-1.1 1.6c.3.5.5 1.1.7 1.7l1.9.4z" fill="currentColor"/></symbol>
+  <symbol id="i-gear" viewBox="0 0 24 24"><path d="M9.90 5.22 L10.38 2.54 L13.62 2.54 L14.10 5.22 L15.31 5.72 L17.54 4.16 L19.84 6.46 L18.28 8.69 L18.78 9.90 L21.46 10.38 L21.46 13.62 L18.78 14.10 L18.28 15.31 L19.84 17.54 L17.54 19.84 L15.31 18.28 L14.10 18.78 L13.62 21.46 L10.38 21.46 L9.90 18.78 L8.69 18.28 L6.46 19.84 L4.16 17.54 L5.72 15.31 L5.22 14.10 L2.54 13.62 L2.54 10.38 L5.22 9.90 L5.72 8.69 L4.16 6.46 L6.46 4.16 L8.69 5.72Z M12 8.4a3.6 3.6 0 1 0 0 7.2 3.6 3.6 0 0 0 0-7.2z" fill="currentColor" fill-rule="evenodd" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></symbol>
   <symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#2f7d4a"/><path d="M6.5 12.5l3.6 3.6 7.4-7.6" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
   <symbol id="i-cross" viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#b8473a"/><path d="M8 8l8 8M16 8l-8 8" stroke="#fff" stroke-width="2.6" stroke-linecap="round"/></symbol>
   <symbol id="i-dash" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="none" stroke="#a9a497" stroke-width="2" stroke-dasharray="3 3"/></symbol>
@@ -488,8 +489,8 @@ button,a,.opt,[role=button]{touch-action:manipulation}
   <div class="sign" style="margin-top:26px"><h1 class="kin" aria-label="Anatomy Run">Anatomy Run</h1><p>A clinical reasoning quest by MotionPlus Physio.</p></div>
   <div class="demo-pill"><span class="pill gold">Free demo · all 22 levels</span><span class="pill">v2.0</span></div>
   <div class="parch" id="newPlayer" style="display:flex;flex-direction:column;gap:14px">
-    <span class="banner">Create your player</span>
-    <div class="field"><label for="pname">Player name</label><input id="pname" maxlength="16" placeholder="e.g. Dr. Zara" autocomplete="nickname"></div>
+    <span class="banner">Choose your Jo</span>
+    <div class="field" hidden><label for="pname">Player name</label><input id="pname" maxlength="16" placeholder="e.g. Dr. Zara" autocomplete="nickname"></div>
     <div class="field"><span class="flabel" id="avl">Avatar</span><div class="avatars" id="avPick" role="group" aria-labelledby="avl"></div></div>
     <div class="field"><span class="flabel" id="mdl">Mode</span><div class="modes" id="modePick" role="group" aria-labelledby="mdl"></div></div>
     <button class="plaque forest" id="startBtn" type="button">Start the quest</button>
@@ -599,8 +600,8 @@ button,a,.opt,[role=button]{touch-action:manipulation}
   <div class="toggle"><span>Full screen</span><button class="quiet" id="setFull" type="button" style="width:auto">Go full screen</button></div>
   <div class="toggle"><span>On-screen buttons<br><small class="muted">Back, Forward and Jump buttons. Auto shows them on touch screens</small></span><div class="seg" id="setTouch" role="group" aria-label="On-screen buttons"><button type="button" data-t="auto">Auto</button><button type="button" data-t="on">On</button><button type="button" data-t="off">Off</button></div></div>
   <div class="toggle"><span>Button size</span><div class="seg" id="setTsize" role="group" aria-label="Button size"><button type="button" data-s="m">Medium</button><button type="button" data-s="l">Large</button></div></div>
-  <div class="toggle" style="display:block"><span class="flabel">Your data</span><p style="margin-top:6px;font-size:14px">Your name, progress and settings are saved only in this browser. Nothing is sent to us.</p><div class="row" style="gap:8px;margin-top:8px;flex-wrap:wrap"><button class="quiet" id="setLegal" type="button">Privacy, terms and copyright</button><button class="quiet danger" id="setWipe" type="button">Delete my data</button></div>
-    <div id="wipeConfirm" hidden style="margin-top:10px"><p style="font-size:14px;font-weight:700">Delete your name, progress, sparks, clinic and badges from this browser? This can't be undone.</p><div class="row" style="gap:8px;margin-top:8px"><button class="plaque coral" id="wipeYes" type="button">Delete everything</button><button class="quiet" id="wipeNo" type="button">Keep my data</button></div></div></div>
+  <div class="toggle" style="display:block"><span class="flabel">Your data</span><p style="margin-top:6px;font-size:14px">Your progress and settings are saved only in this browser. Nothing is sent to us.</p><div class="row" style="gap:8px;margin-top:8px;flex-wrap:wrap"><button class="quiet" id="setLegal" type="button">Privacy, terms and copyright</button><button class="quiet danger" id="setWipe" type="button">Delete my data</button></div>
+    <div id="wipeConfirm" hidden style="margin-top:10px"><p style="font-size:14px;font-weight:700">Delete your progress, sparks, clinic and badges from this browser? This can't be undone.</p><div class="row" style="gap:8px;margin-top:8px"><button class="plaque coral" id="wipeYes" type="button">Delete everything</button><button class="quiet" id="wipeNo" type="button">Keep my data</button></div></div></div>
   <button class="plaque forest" id="setClose" type="button">Done</button>
 </div></div></div>
 
@@ -616,7 +617,7 @@ button,a,.opt,[role=button]{touch-action:manipulation}
     <p class="muted">Effective date: 6 November 2026 · Applies to the free demo of Anatomy Run</p>
     <h3>Who we are</h3><p>Anatomy Run is made by MotionPlus Physio Pvt. Ltd., Hyderabad, Telangana, India ("we"). We decide how the personal data described here is used.</p>
     <h3>What this version collects</h3>
-    <ul><li><b>The name you type</b>, your avatar, mode, progress, stars, sparks, clinic upgrades, badges, best times, streak and settings.</li><li>These are stored <b>only in your own browser</b> (local storage). They are not sent to us and we cannot see them.</li><li>We do not ask for patient information. Please never type real patient details into the game.</li></ul>
+    <ul><li>No name or personal details: every player is Jo. Your chosen avatar, mode, progress, stars, sparks, clinic upgrades, badges, best times, streak and settings.</li><li>These are stored <b>only in your own browser</b> (local storage). They are not sent to us and we cannot see them.</li><li>We do not ask for patient information. Please never type real patient details into the game.</li></ul>
     <h3>Services that receive technical data</h3><ul><li><b>Fonts:</b> the game loads typefaces from Google Fonts, so Google receives your IP address and browser details when the page opens. See Google's privacy policy.</li><li><b>Hosting:</b> Our hosting provider (GitHub Pages, operated by GitHub, Inc.) receives standard server logs (IP address, time, pages requested) to deliver the game and keep it secure.</li></ul>
     <h3>No accounts, payments, ads or tracking</h3><p>The demo is free. It has no sign-up, no payments, no advertising and no analytics or tracking cookies. If a future version adds accounts or purchases, we will update this policy and tell you before any new data is collected.</p>
     <h3>Supporting development</h3><p>If you choose to contribute, you pay through your own UPI app. We see only what UPI shows the receiver (your UPI name or ID, amount and note), never your UPI PIN or bank details, and we use it only to record and thank you for your contribution.</p><h3>Why we use it</h3><p>Only to run the game and remember your progress on this device.</p>
@@ -1828,8 +1829,8 @@ function renderStart(){toMenu();const has=!!save.name;$('newPlayer').hidden=has;
     $('hubClinic').innerHTML=`${ico('clinic')} My clinic${canUpgrade().length?' · upgrade ready':''}`;
     modeButtons($('modePick2'),()=>{save.mode=pickMode;persist()})}
   show('v-start')}
-$('startBtn').onclick=()=>{const n=cleanName($('pname').value);if(!n){$('pname').focus();$('pname').placeholder='Type a name to start';return}
-  if(TOUCH)goFull();save.name=n;save.av=pickAv;save.mode=pickMode;persist();beep('good');renderMap()};
+$('startBtn').onclick=()=>{const n=cleanName($('pname').value);
+  if(TOUCH)goFull();save.name='Jo';save.av=pickAv;save.mode=pickMode;persist();beep('good');renderMap()};
 $('contBtn').onclick=()=>{if(TOUCH)goFull();beep('good');renderMap(true)};
 $('editProfile').onclick=()=>{$('newPlayer').hidden=false;$('returning').hidden=true;pickAv=save.av;$('pname').value=save.name;avatarButtons();modeButtons($('modePick'))};
 $('hubLib').onclick=()=>openLib();$('hubClinic').onclick=()=>openBase();
@@ -2266,6 +2267,7 @@ $('supAmts').querySelectorAll('button').forEach(b=>b.onclick=()=>{setAmt(+b.data
 $('supCopy').onclick=()=>{const done=()=>{$('supCopy').textContent='Copied';setTimeout(()=>$('supCopy').textContent='Copy UPI ID',1600)};
   try{navigator.clipboard.writeText('jose496@ybl').then(done,()=>{const r=document.createRange();r.selectNodeContents($('supUpi'));const sl=getSelection();sl.removeAllRanges();sl.addRange(r);$('supCopy').textContent='Selected: copy it'})}catch(e){const r=document.createRange();r.selectNodeContents($('supUpi'));const sl=getSelection();sl.removeAllRanges();sl.addRange(r)}};
 /* ================= v2.0 immersion pack: atmosphere, light, juice, adaptive music ================= */
+if(save.name&&save.name!=='Jo'){save.name='Jo';persist()}
 let hitstop=0,flash=null,pops=[],iris=null,intro=null,lookX=0,lastStep=0,trail=[],trailT=0;
 const isCanyon=wd=>wd.sky[0]==='#ff9a6b';
 /* cached glow sprite: far cheaper than a new gradient per light per frame */
@@ -2521,7 +2523,7 @@ function storyCta(){const st=storyState(),dn=STORY.filter((x,i)=>st.done[i]).len
 function openStory(){const st=storyState(),sc=solvedCount(),dn=STORY.filter((x,i)=>st.done[i]).length;
   $('storySub').textContent='Chapter 1 · From graduate to first clinic';$('storyStat').textContent=`${dn}/${STORY.length}`;$('storyCard').hidden=true;$('storyRoad').hidden=false;$('storyList').hidden=false;
   $('storyRoad').innerHTML=`<div class="jo"><canvas id="joAv" width="80" height="80"></canvas><div><span class="flabel">Jo’s dream</span><h3>Build the clinic of the future, one honest step at a time</h3></div></div><p class="muted" style="font-size:14px">Every few levels, a new step of Jo’s career opens: first job, niche, pricing, packages, reputation and the blueprint. General career education, not financial or legal advice.</p><div class="road">${CHAPTERS.map((c,i)=>`<div class="ch${i===0?' on':''}"><b>${i===0?c[0]:'🔒'}</b><span>${c[1]}</span><small>${c[2]}</small></div>`).join('')}</div>`;
-  try{avatarCanvas($('joAv'),AVATARS[1]||AVATARS[0],'head')}catch(e){}
+  try{avatarCanvas($('joAv'),AVATARS[save.av]||AVATARS[0],'head')}catch(e){}
   $('storyList').innerHTML=STORY.map((x,i)=>{const open=sc>=x.need,done=!!st.done[i];return`<button class="story-step ${done?'done':open?'open':'lock'}" type="button" data-s="${i}" ${open?'':'disabled'}><span class="n">${done?'✓':i+1}</span><span class="t"><b>${x.title}</b><small>${done?'Jo’s rule: '+x.rule:open?'New story step · up to +25 sparks':`Solve ${x.need} level${x.need>1?'s':''} to unlock`}</small></span></button>`}).join('');
   $('storyList').querySelectorAll('[data-s]').forEach(b=>b.onclick=()=>playStory(+b.dataset.s));
   if($('v-story').hidden)show('v-story');else $('v-story').scrollTop=0}
@@ -2533,6 +2535,52 @@ function playStory(i){const x=STORY[i],st=storyState();$('storyRoad').hidden=tru
     $('storyExp').className='verdict '+(ok?'ok':'no');$('storyExp').innerHTML=VERD(ok,`<b>${ok?'That is how Jo did it.':'Jo chose differently.'}${first?` +${gain} sparks.`:''}</b> ${x.why}`);$('storyRule').textContent='Jo’s rule: '+x.rule;$('storyAfter').hidden=false;beep(ok?'correct':'wrong');if(!TOUCH)$('storyNext').focus({preventScroll:true})});
   $('v-story').scrollTop=0}
 $('storyNext').onclick=()=>openStory();$('storyBack').onclick=()=>{if(!$('storyCard').hidden)openStory();else openBase()};$('storyGo').onclick=openStory;
+
+/* ================= v2.1 hero: Jo, a jointed vector character (curls, round shades, blazer over a white tee) ================= */
+function rig(g,av,o){const t=now,air=!!o.air,moving=!air&&(o.moving!==undefined?o.moving:o.run>0),ph=(o.run||0)/36*Math.PI*2,fem=av.style==='wavy';
+  const skin=fem?'#c98f68':'#8f5b3d',skin2=fem?'#a9714e':'#6f4329',hair=fem?'#2a1610':'#140e0d',coat=fem?'#b8503f':'#1b1c21',coat2=fem?'#8a3a2d':'#0b0c0f',pant=fem?'#3b4257':'#2a2e38',pant2=fem?'#2b3144':'#1b1e26';
+  const bob=moving?-Math.abs(Math.sin(ph))*1.7:air?0:Math.sin(t*2.2)*.35,lean=moving?.17:air?.06:0,sq=o.squash||0;
+  g.save();g.scale(1+sq*.16,1-sq*.16);g.lineCap='round';g.lineJoin='round';
+  const hip=[0,-15+bob],sh=[lean*11,-27.2+bob];
+  const leg=(p,front)=>{let a,b;if(air){a=front?.8:-.5;b=front?1.3:.9}else if(moving){a=Math.sin(p)*.8;b=Math.max(0,-Math.cos(p))*1.25+.14}else{a=front?.07:-.07;b=.04}
+    const kx=hip[0]+Math.sin(a)*7.7,ky=hip[1]+Math.cos(a)*7.7,fx=kx+Math.sin(a-b)*7.7,fy=Math.min(air?99:-.2,ky+Math.cos(a-b)*7.7);
+    g.strokeStyle=front?pant:pant2;g.lineWidth=4.5;g.beginPath();g.moveTo(hip[0],hip[1]);g.lineTo(kx,ky);g.lineTo(fx,fy-1.4);g.stroke();
+    const up=fy<-1.2||air,rot=up?Math.max(-.9,Math.min(.9,(a-b)*.7+.5)):0;g.save();g.translate(fx,fy-1.5);g.rotate(rot);
+    g.fillStyle=front?'#f6f3ec':'#d9d5cc';g.beginPath();g.ellipse(1.5,0,3.6,2,0,0,7);g.fill();g.fillStyle='#DF755F';g.fillRect(-2,1,7,.95);g.restore()};
+  const arm=(p,front)=>{let a,b;if(air){a=front?2.25:-1.9;b=front?.5:-.5}else if(moving){a=-Math.sin(p)*1.05;b=1.15}else{a=(front?.1:-.08)+Math.sin(t*2.2)*.03;b=.16}
+    const sx=sh[0]+(front?.6:-1),sy=sh[1]+1.4,ex=sx+Math.sin(a)*5.6,ey=sy+Math.cos(a)*5.6,hx=ex+Math.sin(a+b)*5.2,hy=ey+Math.cos(a+b)*5.2;
+    g.strokeStyle=front?coat:coat2;g.lineWidth=3.9;g.beginPath();g.moveTo(sx,sy);g.lineTo(ex,ey);g.lineTo(hx,hy);g.stroke();
+    g.fillStyle='#f6f3ec';g.beginPath();g.arc(hx-Math.sin(a+b)*1.1,hy-Math.cos(a+b)*1.1,1.9,0,7);g.fill();g.fillStyle=front?skin:skin2;g.beginPath();g.arc(hx,hy,1.9,0,7);g.fill()};
+  arm(ph,false);leg(ph+Math.PI,false);
+  // torso: blazer with a back vent that flaps, white tee, lapel, red plus pin
+  const flap=moving?2.4+Math.sin(ph*2)*1.3:air?3:0;
+  g.fillStyle=coat;g.beginPath();g.moveTo(sh[0]-6,sh[1]+1.2);g.quadraticCurveTo(sh[0]-.5,sh[1]-2.8,sh[0]+5.4,sh[1]+1.2);g.lineTo(hip[0]+5,hip[1]+1.8);g.lineTo(hip[0]-3.4,hip[1]+2.2);g.lineTo(hip[0]-4.8-flap,hip[1]+3.2-(moving?1:0));g.closePath();g.fill();
+  g.fillStyle='#f6f4ee';g.beginPath();g.moveTo(sh[0]+.4,sh[1]-.4);g.lineTo(sh[0]+4.3,sh[1]+.9);g.lineTo(hip[0]+4.2,hip[1]+1.7);g.lineTo(hip[0]+1.4,hip[1]+1.7);g.closePath();g.fill();
+  g.strokeStyle=coat2;g.lineWidth=1.1;g.beginPath();g.moveTo(sh[0]+.5,sh[1]-.2);g.lineTo(hip[0]+1.5,hip[1]-2.4);g.stroke();
+  g.strokeStyle='rgba(255,255,255,.16)';g.lineWidth=.8;g.beginPath();g.moveTo(sh[0]-5,sh[1]+1.6);g.lineTo(hip[0]-3.8,hip[1]+1.6);g.stroke();
+  g.fillStyle=fem?'#fff':'#e3342f';g.fillRect(sh[0]-3.1,sh[1]+3.5,2.6,.95);g.fillRect(sh[0]-2.28,sh[1]+2.68,.95,2.6);
+  leg(ph,true);
+  // head
+  const hb=moving?Math.sin(ph*2)*.45:0,hx=sh[0]+1.3+lean*3,hy=sh[1]-7.4+hb,curl=(i,s)=>Math.sin(t*3+i*1.7)*.22+(moving?Math.sin(ph*2+i*.9)*.55*s:0)+(air?-.7*s:0);
+  g.fillStyle=skin2;g.fillRect(hx-1.6,hy+3.5,3.4,3.6);
+  g.fillStyle=hair;for(let i=0;i<11;i++){const an=(-205+i*21)*Math.PI/180,r=3.3+hsh(i*2.3)*1.3;g.beginPath();g.arc(hx+Math.cos(an)*6.1,hy+Math.sin(an)*6.1+curl(i,1),r,0,7);g.fill()}
+  if(fem)for(let i=0;i<4;i++){g.beginPath();g.arc(hx-5.6-hsh(i)*1.2-(moving?1.5+i*.5:0),hy+3+i*2.6+curl(i,1.4),2.9,0,7);g.fill()}
+  g.fillStyle=skin;g.beginPath();g.arc(hx,hy,5.7,0,7);g.fill();g.beginPath();g.arc(hx+5.5,hy+1,1.15,0,7);g.fill();g.fillStyle=skin2;g.beginPath();g.arc(hx-3.4,hy+.8,1.3,0,7);g.fill();
+  if(!fem){g.fillStyle='rgba(22,15,13,.5)';g.beginPath();g.arc(hx+.3,hy+.3,5.75,.18,Math.PI*.86);g.arc(hx+.6,hy-1.6,5.2,Math.PI*.8,.3,true);g.closePath();g.fill();
+    g.strokeStyle=hair;g.lineWidth=1.35;g.beginPath();g.moveTo(hx+2.2,hy+2.7);g.quadraticCurveTo(hx+4,hy+2.1,hx+5.5,hy+3.1);g.stroke()}
+  else{g.strokeStyle='#8a3a2d';g.lineWidth=.9;g.beginPath();g.moveTo(hx+3.2,hy+3.2);g.quadraticCurveTo(hx+4.3,hy+3.8,5.2+hx,hy+3.1);g.stroke()}
+  g.fillStyle=hair;for(let i=0;i<5;i++){const an=(-150+i*30)*Math.PI/180;g.beginPath();g.arc(hx+Math.cos(an)*4.9,hy+Math.sin(an)*4.9+curl(i+5,.8),2.5+hsh(i*5.1)*.8,0,7);g.fill()}
+  g.beginPath();g.arc(hx+4.4,hy-3.5+curl(3,1),1.7,0,7);g.arc(hx-4.9,hy+1.2+curl(7,1),2.3,0,7);g.fill();
+  // round shades with a moving glint
+  g.strokeStyle='#33343a';g.lineWidth=.8;g.beginPath();g.moveTo(hx-3.2,hy-.2);g.lineTo(hx-.9,hy-.4);g.moveTo(hx+2.5,hy-.5);g.lineTo(hx+3.3,hy-.5);g.stroke();
+  g.fillStyle='#08080a';g.beginPath();g.arc(hx+1,hy-.2,2.3,0,7);g.fill();g.stroke();g.beginPath();g.arc(hx+4.5,hy-.2,1.8,0,7);g.fill();g.stroke();
+  const gl=(t*.6)%4;g.strokeStyle=`rgba(255,255,255,${gl<1?.85*Math.sin(gl*Math.PI):.28})`;g.lineWidth=.7;g.beginPath();g.arc(hx+.9,hy-.2,1.6,-2.5,-1.5);g.stroke();g.beginPath();g.arc(hx+4.6,hy-.2,1.2,-2.5,-1.5);g.stroke();
+  arm(ph+Math.PI,true);g.restore()}
+function drawHero(g,av,o){const sc=(o.k||1.6)/1.6*1.16;g.save();g.scale(((o.face||1)<0?-1:1)*sc,sc);rig(g,av,o);g.restore()}
+function avatarCanvas(c,av,mode){const g=c.getContext('2d');g.clearRect(0,0,c.width,c.height);
+  const bg=g.createRadialGradient(c.width/2,c.height*.5,2,c.width/2,c.height/2,c.width*.6);bg.addColorStop(0,(av.style==='wavy'?'#ef8f7b':'#F2C75C')+'66');bg.addColorStop(1,'rgba(0,0,0,0)');g.fillStyle=bg;g.fillRect(0,0,c.width,c.height);
+  g.save();if(mode==='head'){const s=c.width/19;g.translate(c.width/2-1.5*s,c.height*.52+34*s);g.scale(s,s)}else{const s=c.height*.86/45;g.translate(c.width/2-s,c.height*.96);g.scale(s,s)}
+  rig(g,av,{run:0,moving:false,air:false,squash:0});g.restore()}
 
 /* ================= loop ================= */
 document.body.classList.toggle('lowfx',!FX());
