@@ -5,6 +5,14 @@ through 22 levels, collect clinical clues, then make the diagnosis. Each level e
 with takeaways, a recap with references, and a bonus Clinic Shift where you plan
 treatment, talk to the patient and offer a fair care package.
 
+**What's in v2.0**
+
+- Living worlds: sun rays, aurora, mist, fireflies, falling leaves, real darkness with light pools at night
+- Adaptive soundtrack per world that softens while you think, plus nature ambience and footsteps
+- A new twist every level (spark shower, beat the clock, aqua therapy, double trouble, windy ridge, icy morning)
+- Rotating clue styles: multiple choice, True/False, and a golden double-reward clue
+- Jo's clinic story: step-by-step career and pricing lessons on the way to a futuristic clinic (Chapter 1)
+
 Made by **MotionPlus Physio** as an **Inclusive.Si** project.
 
 - Clinical review: MSK by Dr. Pavithran and Dr. Venkatesh; Neuro by Dr. Sudharson and Dr. Jeeva
