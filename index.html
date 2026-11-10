@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-gNUz/o+uppAyDwexx7k40gwF7CG9cAmsa10C/zSjewc='; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: blob:; media-src 'self' data: blob:; connect-src 'none'; manifest-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'; worker-src 'self'; upgrade-insecure-requests">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-IRPpSwvUeuP+LELf5Ddgy4R5F0Ga35JVPjziVyM3p4w='; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: blob:; media-src 'self' data: blob:; connect-src 'none'; manifest-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'; worker-src 'self'; upgrade-insecure-requests">
 <meta name="referrer" content="no-referrer">
 <meta name="description" content="Anatomy Run: a free physiotherapy anatomy platformer. Run, collect clinical clues, make the diagnosis. By MotionPlus Physio and Inclusive.Si.">
 <meta name="theme-color" content="#173F31">
@@ -2536,51 +2536,47 @@ function playStory(i){const x=STORY[i],st=storyState();$('storyRoad').hidden=tru
   $('v-story').scrollTop=0}
 $('storyNext').onclick=()=>openStory();$('storyBack').onclick=()=>{if(!$('storyCard').hidden)openStory();else openBase()};$('storyGo').onclick=openStory;
 
-/* ================= v2.1 hero: Jo, a jointed vector character (curls, round shades, blazer over a white tee) ================= */
-function rig(g,av,o){const t=now,air=!!o.air,moving=!air&&(o.moving!==undefined?o.moving:o.run>0),ph=(o.run||0)/36*Math.PI*2,fem=av.style==='wavy';
-  const skin=fem?'#c98f68':'#8f5b3d',skin2=fem?'#a9714e':'#6f4329',hair=fem?'#2a1610':'#140e0d',coat=fem?'#b8503f':'#1b1c21',coat2=fem?'#8a3a2d':'#0b0c0f',pant=fem?'#3b4257':'#2a2e38',pant2=fem?'#2b3144':'#1b1e26';
-  const bob=moving?-Math.abs(Math.sin(ph))*1.7:air?0:Math.sin(t*2.2)*.35,lean=moving?.17:air?.06:0,sq=o.squash||0;
-  g.save();g.scale(1+sq*.16,1-sq*.16);g.lineCap='round';g.lineJoin='round';
-  const hip=[0,-15+bob],sh=[lean*11,-27.2+bob];
-  const leg=(p,front)=>{let a,b;if(air){a=front?.8:-.5;b=front?1.3:.9}else if(moving){a=Math.sin(p)*.8;b=Math.max(0,-Math.cos(p))*1.25+.14}else{a=front?.07:-.07;b=.04}
-    const kx=hip[0]+Math.sin(a)*7.7,ky=hip[1]+Math.cos(a)*7.7,fx=kx+Math.sin(a-b)*7.7,fy=Math.min(air?99:-.2,ky+Math.cos(a-b)*7.7);
-    g.strokeStyle=front?pant:pant2;g.lineWidth=4.5;g.beginPath();g.moveTo(hip[0],hip[1]);g.lineTo(kx,ky);g.lineTo(fx,fy-1.4);g.stroke();
-    const up=fy<-1.2||air,rot=up?Math.max(-.9,Math.min(.9,(a-b)*.7+.5)):0;g.save();g.translate(fx,fy-1.5);g.rotate(rot);
-    g.fillStyle=front?'#f6f3ec':'#d9d5cc';g.beginPath();g.ellipse(1.5,0,3.6,2,0,0,7);g.fill();g.fillStyle='#DF755F';g.fillRect(-2,1,7,.95);g.restore()};
-  const arm=(p,front)=>{let a,b;if(air){a=front?2.25:-1.9;b=front?.5:-.5}else if(moving){a=-Math.sin(p)*1.05;b=1.15}else{a=(front?.1:-.08)+Math.sin(t*2.2)*.03;b=.16}
-    const sx=sh[0]+(front?.6:-1),sy=sh[1]+1.4,ex=sx+Math.sin(a)*5.6,ey=sy+Math.cos(a)*5.6,hx=ex+Math.sin(a+b)*5.2,hy=ey+Math.cos(a+b)*5.2;
-    g.strokeStyle=front?coat:coat2;g.lineWidth=3.9;g.beginPath();g.moveTo(sx,sy);g.lineTo(ex,ey);g.lineTo(hx,hy);g.stroke();
-    g.fillStyle='#f6f3ec';g.beginPath();g.arc(hx-Math.sin(a+b)*1.1,hy-Math.cos(a+b)*1.1,1.9,0,7);g.fill();g.fillStyle=front?skin:skin2;g.beginPath();g.arc(hx,hy,1.9,0,7);g.fill()};
-  arm(ph,false);leg(ph+Math.PI,false);
-  // torso: blazer with a back vent that flaps, white tee, lapel, red plus pin
-  const flap=moving?2.4+Math.sin(ph*2)*1.3:air?3:0;
-  g.fillStyle=coat;g.beginPath();g.moveTo(sh[0]-6,sh[1]+1.2);g.quadraticCurveTo(sh[0]-.5,sh[1]-2.8,sh[0]+5.4,sh[1]+1.2);g.lineTo(hip[0]+5,hip[1]+1.8);g.lineTo(hip[0]-3.4,hip[1]+2.2);g.lineTo(hip[0]-4.8-flap,hip[1]+3.2-(moving?1:0));g.closePath();g.fill();
-  g.fillStyle='#f6f4ee';g.beginPath();g.moveTo(sh[0]+.4,sh[1]-.4);g.lineTo(sh[0]+4.3,sh[1]+.9);g.lineTo(hip[0]+4.2,hip[1]+1.7);g.lineTo(hip[0]+1.4,hip[1]+1.7);g.closePath();g.fill();
-  g.strokeStyle=coat2;g.lineWidth=1.1;g.beginPath();g.moveTo(sh[0]+.5,sh[1]-.2);g.lineTo(hip[0]+1.5,hip[1]-2.4);g.stroke();
-  g.strokeStyle='rgba(255,255,255,.16)';g.lineWidth=.8;g.beginPath();g.moveTo(sh[0]-5,sh[1]+1.6);g.lineTo(hip[0]-3.8,hip[1]+1.6);g.stroke();
-  g.fillStyle=fem?'#fff':'#e3342f';g.fillRect(sh[0]-3.1,sh[1]+3.5,2.6,.95);g.fillRect(sh[0]-2.28,sh[1]+2.68,.95,2.6);
-  leg(ph,true);
-  // head
-  const hb=moving?Math.sin(ph*2)*.45:0,hx=sh[0]+1.3+lean*3,hy=sh[1]-7.4+hb,curl=(i,s)=>Math.sin(t*3+i*1.7)*.22+(moving?Math.sin(ph*2+i*.9)*.55*s:0)+(air?-.7*s:0);
-  g.fillStyle=skin2;g.fillRect(hx-1.6,hy+3.5,3.4,3.6);
-  g.fillStyle=hair;for(let i=0;i<11;i++){const an=(-205+i*21)*Math.PI/180,r=3.3+hsh(i*2.3)*1.3;g.beginPath();g.arc(hx+Math.cos(an)*6.1,hy+Math.sin(an)*6.1+curl(i,1),r,0,7);g.fill()}
-  if(fem)for(let i=0;i<4;i++){g.beginPath();g.arc(hx-5.6-hsh(i)*1.2-(moving?1.5+i*.5:0),hy+3+i*2.6+curl(i,1.4),2.9,0,7);g.fill()}
-  g.fillStyle=skin;g.beginPath();g.arc(hx,hy,5.7,0,7);g.fill();g.beginPath();g.arc(hx+5.5,hy+1,1.15,0,7);g.fill();g.fillStyle=skin2;g.beginPath();g.arc(hx-3.4,hy+.8,1.3,0,7);g.fill();
-  if(!fem){g.fillStyle='rgba(22,15,13,.5)';g.beginPath();g.arc(hx+.3,hy+.3,5.75,.18,Math.PI*.86);g.arc(hx+.6,hy-1.6,5.2,Math.PI*.8,.3,true);g.closePath();g.fill();
-    g.strokeStyle=hair;g.lineWidth=1.35;g.beginPath();g.moveTo(hx+2.2,hy+2.7);g.quadraticCurveTo(hx+4,hy+2.1,hx+5.5,hy+3.1);g.stroke()}
-  else{g.strokeStyle='#8a3a2d';g.lineWidth=.9;g.beginPath();g.moveTo(hx+3.2,hy+3.2);g.quadraticCurveTo(hx+4.3,hy+3.8,5.2+hx,hy+3.1);g.stroke()}
-  g.fillStyle=hair;for(let i=0;i<5;i++){const an=(-150+i*30)*Math.PI/180;g.beginPath();g.arc(hx+Math.cos(an)*4.9,hy+Math.sin(an)*4.9+curl(i+5,.8),2.5+hsh(i*5.1)*.8,0,7);g.fill()}
-  g.beginPath();g.arc(hx+4.4,hy-3.5+curl(3,1),1.7,0,7);g.arc(hx-4.9,hy+1.2+curl(7,1),2.3,0,7);g.fill();
-  // round shades with a moving glint
-  g.strokeStyle='#33343a';g.lineWidth=.8;g.beginPath();g.moveTo(hx-3.2,hy-.2);g.lineTo(hx-.9,hy-.4);g.moveTo(hx+2.5,hy-.5);g.lineTo(hx+3.3,hy-.5);g.stroke();
-  g.fillStyle='#08080a';g.beginPath();g.arc(hx+1,hy-.2,2.3,0,7);g.fill();g.stroke();g.beginPath();g.arc(hx+4.5,hy-.2,1.8,0,7);g.fill();g.stroke();
-  const gl=(t*.6)%4;g.strokeStyle=`rgba(255,255,255,${gl<1?.85*Math.sin(gl*Math.PI):.28})`;g.lineWidth=.7;g.beginPath();g.arc(hx+.9,hy-.2,1.6,-2.5,-1.5);g.stroke();g.beginPath();g.arc(hx+4.6,hy-.2,1.2,-2.5,-1.5);g.stroke();
-  arm(ph+Math.PI,true);g.restore()}
-function drawHero(g,av,o){const sc=(o.k||1.6)/1.6*1.16;g.save();g.scale(((o.face||1)<0?-1:1)*sc,sc);rig(g,av,o);g.restore()}
-function avatarCanvas(c,av,mode){const g=c.getContext('2d');g.clearRect(0,0,c.width,c.height);
-  const bg=g.createRadialGradient(c.width/2,c.height*.5,2,c.width/2,c.height/2,c.width*.6);bg.addColorStop(0,(av.style==='wavy'?'#ef8f7b':'#F2C75C')+'66');bg.addColorStop(1,'rgba(0,0,0,0)');g.fillStyle=bg;g.fillRect(0,0,c.width,c.height);
-  g.save();if(mode==='head'){const s=c.width/19;g.translate(c.width/2-1.5*s,c.height*.52+34*s);g.scale(s,s)}else{const s=c.height*.86/45;g.translate(c.width/2-s,c.height*.96);g.scale(s,s)}
-  rig(g,av,{run:0,moving:false,air:false,squash:0});g.restore()}
+/* ================= v2.1 hero: Jo, a chunky big-headed pixel character (curls, big eyes, moustache, plus-logo tee) ================= */
+const SPR2={};
+function sprite(av,f,blink){const key=av.style+f+(blink?1:0);if(SPR2[key])return SPR2[key];const c=document.createElement('canvas');c.width=20;c.height=24;const g=c.getContext('2d');
+  const fem=av.style==='wavy',skin=fem?'#f0bd95':'#d2936a',skin2=fem?'#d09a72':'#ad7148',hair=fem?'#4a2416':'#221528',hair2=fem?'#7a3f24':'#4b3460',shirt=av.top[0],shirt2=av.top[1],pant=av.pants,pant2='#2b3550',shoe=av.shoe,WH='#ffffff',INK='#1b1220';
+  const F={idle:{fl:[0,0],bl:[0,0],fa:0,ba:0,bob:0},run1:{fl:[2,0],bl:[-2,-1],fa:-1,ba:1,bob:0},run2:{fl:[0,-1],bl:[0,0],fa:0,ba:0,bob:-1},run3:{fl:[-2,-1],bl:[2,0],fa:1,ba:-1,bob:0},jump:{fl:[2,-1],bl:[-2,-2],fa:2,ba:-1,bob:-1}}[f];
+  const R=(x,y,w,h,col)=>{g.fillStyle=col;g.fillRect(x+1,y+1,w,h)},b=F.bob;
+  // legs + shoes (back leg darker)
+  const leg=(x,o,back)=>{R(x+o[0],17+b,3,3+o[1]-b,back?pant2:pant);R(x+o[0],20+o[1],4,2,shoe);R(x+o[0],21+o[1],4,1,back?'#a8503f':'#b85a47');R(x+o[0]+3,20+o[1],1,1,WH)};
+  leg(6,F.bl,true);leg(10,F.fl,false);
+  // back arm
+  R(4,12+b,2,2,shirt2);R(4+F.ba,14+b,2,3,skin2);
+  // body: tee with the MotionPlus plus
+  R(5,12+b,9,5,shirt);R(5,16+b,9,1,shirt2);R(5,12+b,1,5,shirt2);R(6,17+b,7,1,pant);
+  R(8,13+b,3,3,WH);R(9,13+b,1,3,'#e3342f');R(8,14+b,3,1,'#e3342f');
+  // head: big and round
+  R(4,4+b,11,7,skin);R(5,11+b,9,1,skin);R(15,8+b,1,1,skin);R(4,8+b,1,2,skin2);R(5,11+b,9,1,skin2);R(6,11+b,7,1,skin);
+  // curly hair
+  R(3,1+b,11,3,hair);R(2,2+b,13,3,hair);R(4,0+b,2,1,hair);R(7,0+b,3,1,hair);R(11,0+b,2,1,hair);R(1,3+b,1,4,hair);R(2,5+b,2,4,hair);R(15,3+b,1,2,hair);
+  R(4,5+b,2,1,hair);R(7,5+b,2,1,hair);R(11,5+b,1,1,hair);R(13,5+b,2,1,hair);
+  R(5,1+b,2,1,hair2);R(9,2+b,2,1,hair2);R(12,1+b,1,1,hair2);R(3,4+b,1,1,hair2);R(13,3+b,1,1,hair2);
+  if(fem){R(1,6+b,3,8,hair);R(2,14+b,2,1,hair);R(2,8+b,1,2,hair2);R(14,5+b,2,1,hair)}
+  // face: big shiny eyes, blush, nose, moustache or smile
+  if(blink){R(7,8+b,2,1,INK);R(11,8+b,2,1,INK)}else{R(7,6+b,2,3,INK);R(7,6+b,1,1,WH);R(11,6+b,2,3,INK);R(11,6+b,1,1,WH)}
+  R(5,9+b,2,1,'#f29a8a');
+  if(fem){R(10,10+b,2,1,'#c2553f');R(13,9+b,1,1,'#f29a8a')}else{R(9,10+b,5,1,hair);R(10,11+b,2,1,'#8a4a35')}
+  // front arm (raised when jumping)
+  if(F.fa===2){R(12,11+b,2,2,shirt2);R(13,8+b,2,3,skin);R(13,7+b,2,1,WH)}else{R(12,12+b,2,2,shirt2);R(12+F.fa,14+b,2,3,skin)}
+  // crisp dark outline for a sticker look that reads on any background
+  const d=g.getImageData(0,0,20,24),a=d.data,op=(x,y)=>x>=0&&y>=0&&x<20&&y<24&&a[(y*20+x)*4+3]>0,add=[];
+  for(let y=0;y<24;y++)for(let x=0;x<20;x++)if(!op(x,y)&&(op(x-1,y)||op(x+1,y)||op(x,y-1)||op(x,y+1)))add.push([x,y]);
+  g.fillStyle=INK;for(const[x,y]of add)g.fillRect(x,y,1,1);
+  return SPR2[key]=c}
+function drawHero(g,av,o){const moving=!o.air&&(o.moving!==undefined?o.moving:o.run>0),f=o.air?'jump':moving?['run1','run2','run3','run2'][Math.floor((o.run||0)/9)%4]:'idle',spr=sprite(av,f,!!o.blink);
+  const m=g.getTransform(),ps=Math.hypot(m.a,m.b)||1,p=Math.max(1,Math.round((o.k||1.6)*1.12*ps)),flip=(o.face||1)<0?-1:1,sq=o.squash||0;
+  g.save();g.setTransform(flip,0,0,1,Math.round(m.e),Math.round(m.f));const sm=g.imageSmoothingEnabled;g.imageSmoothingEnabled=false;
+  const w=Math.round(20*p*(1+sq*.14)),h=Math.round(24*p*(1-sq*.14));g.drawImage(spr,-Math.round(w/2),-Math.round(h*23/24),w,h);g.imageSmoothingEnabled=sm;g.restore()}
+function avatarCanvas(c,av,mode){const g=c.getContext('2d');g.clearRect(0,0,c.width,c.height);g.imageSmoothingEnabled=false;
+  const bg=g.createRadialGradient(c.width/2,c.height*.5,2,c.width/2,c.height/2,c.width*.6);bg.addColorStop(0,av.top[0]+'66');bg.addColorStop(1,'rgba(0,0,0,0)');g.fillStyle=bg;g.fillRect(0,0,c.width,c.height);
+  const spr=sprite(av,'idle',false);
+  if(mode==='head'){const s=Math.max(1,Math.floor(c.width/19));g.drawImage(spr,0,0,20,14,Math.round((c.width-20*s)/2),c.height-14*s,20*s,14*s);return}
+  const s=Math.max(1,Math.floor(c.height*.9/24));g.drawImage(spr,Math.round((c.width-20*s)/2),Math.round(c.height-24*s-c.height*.03),20*s,24*s)}
 
 /* ================= loop ================= */
 document.body.classList.toggle('lowfx',!FX());
