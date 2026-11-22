@@ -31,6 +31,6 @@ jobs:
           fetch-depth: 0
           persist-credentials: false
       - name: Scan full git history for secrets
-        uses: trufflesecurity/trufflehog@ddc015e5ed99942b2253d8ea16a0586a01ef2ab1 # v3.88.0
+        uses: trufflesecurity/trufflehog@3bd2b5887eb0efb8fa18bfd1d296032924e4ffdc # v3.99.9
         with:
           extra_args: --only-verified
