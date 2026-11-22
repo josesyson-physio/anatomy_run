@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 // Anatomy Run security gate. No dependencies. Run: node scripts/security-check.mjs [--fix-csp]
 // Fails the build if the page drifts from its security baseline.
-import { readFileSync, writeFileSync, mkdtempSync } from 'node:fs';
+import { statSync, readFileSync, writeFileSync, mkdtempSync } from 'node:fs';
 import { createHash } from 'node:crypto';
 import { execFileSync } from 'node:child_process';
 import { tmpdir } from 'node:os';
@@ -10,7 +10,6 @@ import { join } from 'node:path';
 const FILE = 'index.html';
 const EXPECTED_UPI = 'jose496@ybl';
 const ALLOWED_HOSTS = new Set([
-  'fonts.googleapis.com', 'fonts.gstatic.com',          // typefaces (disclosed in privacy policy)
   'www.physio-pedia.com', 'pubmed.ncbi.nlm.nih.gov',     // learning-resource links
   'claude.ai',                                           // Inclusive.Si landing page link
 ]);
@@ -76,6 +75,8 @@ check(/https?:\/\//.test(swSrc) === false || [...swSrc.matchAll(/https?:\/\/([a-
 let man = {}; try { man = JSON.parse(readFileSync('manifest.webmanifest', 'utf8')); } catch {}
 check(man.name === 'Anatomy Run' && man.start_url === './' && (man.icons || []).some(i => i.purpose === 'maskable'), 'web app manifest valid (name, start_url, maskable icon)');
 check(csp.includes("worker-src 'self'"), "CSP allows only same-origin service worker");
+check(/font-src 'self'/.test(csp) && !/fonts\.(googleapis|gstatic)\.com/.test(html + swSrc), 'fonts are self-hosted (no Google Fonts requests)');
+check(['bricolage-grotesque', 'unbounded', 'nunito-sans'].every(f => { try { return statSync(`fonts/${f}.woff`).size > 1000; } catch { return false; } }), 'self-hosted font files present');
 
 // 9. script parses
 try { const d = mkdtempSync(join(tmpdir(), 'ar-')); writeFileSync(join(d, 'c.js'), js);

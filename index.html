@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-IRPpSwvUeuP+LELf5Ddgy4R5F0Ga35JVPjziVyM3p4w='; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: blob:; media-src 'self' data: blob:; connect-src 'none'; manifest-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'; worker-src 'self'; upgrade-insecure-requests">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-IRPpSwvUeuP+LELf5Ddgy4R5F0Ga35JVPjziVyM3p4w='; style-src 'unsafe-inline'; font-src 'self'; img-src 'self' data: blob:; media-src 'self' data: blob:; connect-src 'none'; manifest-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'; worker-src 'self'; upgrade-insecure-requests">
 <meta name="referrer" content="no-referrer">
 <meta name="description" content="Anatomy Run: a free physiotherapy anatomy platformer. Run, collect clinical clues, make the diagnosis. By MotionPlus Physio and Inclusive.Si.">
 <meta name="theme-color" content="#173F31">
@@ -17,9 +17,12 @@
 <meta name="robots" content="index,follow">
 <style>[hidden]{display:none!important}body{margin:0}</style>
 <title>Anatomy Run</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Unbounded:wght@200..900&family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700;6..12,800&display=swap">
+<link rel="preload" href="fonts/unbounded.woff" as="font" type="font/woff" crossorigin>
+<style>
+@font-face{font-family:"Bricolage Grotesque";src:url(fonts/bricolage-grotesque.woff) format("woff");font-weight:200 800;font-stretch:100%;font-display:swap}
+@font-face{font-family:"Unbounded";src:url(fonts/unbounded.woff) format("woff");font-weight:200 900;font-display:swap}
+@font-face{font-family:"Nunito Sans";src:url(fonts/nunito-sans.woff) format("woff");font-weight:400 800;font-stretch:100%;font-display:swap}
+</style>
 <style>
 /* Layout: full-bleed alpine canvas (the world is always behind the UI). Menus are material panels: carved timber actions, parchment field notes, fabric banners, stone plaques. Single handcrafted daylight look by design. */
 :root{
@@ -618,7 +621,7 @@ button,a,.opt,[role=button]{touch-action:manipulation}
     <h3>Who we are</h3><p>Anatomy Run is made by MotionPlus Physio Pvt. Ltd., Hyderabad, Telangana, India ("we"). We decide how the personal data described here is used.</p>
     <h3>What this version collects</h3>
     <ul><li>No name or personal details: every player is Jo. Your chosen avatar, mode, progress, stars, sparks, clinic upgrades, badges, best times, streak and settings.</li><li>These are stored <b>only in your own browser</b> (local storage). They are not sent to us and we cannot see them.</li><li>We do not ask for patient information. Please never type real patient details into the game.</li></ul>
-    <h3>Services that receive technical data</h3><ul><li><b>Fonts:</b> the game loads typefaces from Google Fonts, so Google receives your IP address and browser details when the page opens. See Google's privacy policy.</li><li><b>Hosting:</b> Our hosting provider (GitHub Pages, operated by GitHub, Inc.) receives standard server logs (IP address, time, pages requested) to deliver the game and keep it secure.</li></ul>
+    <h3>Services that receive technical data</h3><ul><li><b>Fonts:</b> the typefaces are served from this site itself, so no font service receives your details.</li><li><b>Hosting:</b> Our hosting provider (GitHub Pages, operated by GitHub, Inc.) receives standard server logs (IP address, time, pages requested) to deliver the game and keep it secure.</li></ul>
     <h3>No accounts, payments, ads or tracking</h3><p>The demo is free. It has no sign-up, no payments, no advertising and no analytics or tracking cookies. If a future version adds accounts or purchases, we will update this policy and tell you before any new data is collected.</p>
     <h3>Supporting development</h3><p>If you choose to contribute, you pay through your own UPI app. We see only what UPI shows the receiver (your UPI name or ID, amount and note), never your UPI PIN or bank details, and we use it only to record and thank you for your contribution.</p><h3>Why we use it</h3><p>Only to run the game and remember your progress on this device.</p>
     <h3>How long we keep it</h3><p>Data in your browser stays until you delete it (Settings → Delete my data) or clear your browser storage. We hold no copy. If you email us feedback, we keep that email only as long as needed to respond and improve the game.</p>
@@ -651,7 +654,7 @@ button,a,.opt,[role=button]{touch-action:manipulation}
     <p><b>© 2026 MotionPlus Physio Pvt. Ltd. All rights reserved.</b> The Anatomy Run game, its name, logo, characters, pixel art, levels, clinical cases, clues, explanations, library cards, sound design and code are owned by MotionPlus Physio Pvt. Ltd. and protected by copyright and other laws.</p>
     <p>"Anatomy Run"™ and the Anatomy Run logo are trademarks of MotionPlus Physio Pvt. Ltd.</p>
     <h3>Clinical content</h3><p>Written for MotionPlus Physio. Clinical review panel: Dr. Pavithran and Dr. Venkatesh (musculoskeletal), Dr. Sudharson and Dr. Jeeva (neurology). Game design and clinical lead: Dr. Syson Jose S. Report an error: <span class="sel">admin@motionplusphysio.in</span>.</p>
-    <h3>Third-party components</h3><ul><li><b>Bricolage Grotesque</b> and <b>Unbounded</b> typefaces, SIL Open Font License 1.1, served by Google Fonts.</li><li><b>Nunito Sans</b> typeface, SIL Open Font License 1.1, served by Google Fonts.</li><li>All other art, sound effects and code were made for Anatomy Run.</li></ul>
+    <h3>Third-party components</h3><ul><li><b>Bricolage Grotesque</b> and <b>Unbounded</b> typefaces, SIL Open Font License 1.1, served from this site.</li><li><b>Nunito Sans</b> typeface, SIL Open Font License 1.1, served from this site.</li><li>All other art, sound effects and code were made for Anatomy Run.</li></ul>
     <h3>Copyright complaints</h3><p>If you believe something in the game infringes your rights, write to <span class="sel">admin@motionplusphysio.in</span> with details and we will respond.</p>
   </article>
 
